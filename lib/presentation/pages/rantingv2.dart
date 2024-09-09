@@ -10,16 +10,14 @@ class Rantingv2 extends StatefulWidget {
 }
 
 class _Rantingv2State extends State<Rantingv2> {
-  List<int> selectedIndex = []; // Daftar untuk menyimpan bintang yang terpilih
+  List<int> selectedIndex = [];
   final TextEditingController _messageController = TextEditingController();
 
   void _handleStarClick(int index) {
     setState(() {
       if (selectedIndex.contains(index)) {
-        // Jika bintang sudah terpilih, hapus bintang dari index ke kanan
         selectedIndex = selectedIndex.where((i) => i <= index).toList();
       } else {
-        // Jika bintang belum terpilih, tambahkan bintang dari index ke kiri
         selectedIndex = List.generate(index + 1, (i) => i);
       }
     });
@@ -27,7 +25,7 @@ class _Rantingv2State extends State<Rantingv2> {
 
   @override
   void dispose() {
-    _messageController.dispose(); // Dispose controller saat widget dihapus
+    _messageController.dispose();
     super.dispose();
   }
 
@@ -80,8 +78,7 @@ class _Rantingv2State extends State<Rantingv2> {
                       index: index,
                       imagesUrl: "assets/icons/star2.png",
                       selectedIndex: selectedIndex,
-                      onclick:
-                          _handleStarClick, // Menggunakan callback yang benar
+                      onclick: _handleStarClick,
                     );
                   }),
                 ),
@@ -107,7 +104,7 @@ class _Rantingv2State extends State<Rantingv2> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      maxLines: null, // Agar bisa multiline
+                      maxLines: null,
                       keyboardType: TextInputType.multiline,
                     ),
                   ),
@@ -120,7 +117,6 @@ class _Rantingv2State extends State<Rantingv2> {
                   height: 55,
                   child: TextButton(
                     onPressed: () {
-                      // Logika untuk submit review dan teks yang diinputkan
                       print('Review: ${_messageController.text}');
                     },
                     style: TextButton.styleFrom(

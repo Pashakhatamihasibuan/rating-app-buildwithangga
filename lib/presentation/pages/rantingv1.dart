@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rating/presentation/pattern/colors.dart';
+import 'package:rating/widget/emoji_widget.dart';
 
 class Rantingv1 extends StatefulWidget {
   const Rantingv1({super.key});
@@ -10,8 +11,7 @@ class Rantingv1 extends StatefulWidget {
 }
 
 class _Rantingv1State extends State<Rantingv1> {
-  bool actived = false;
-
+  int selectedIndex = -1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,77 +82,53 @@ class _Rantingv1State extends State<Rantingv1> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              color: desibleColor,
-                              borderRadius: BorderRadius.circular(
-                                30,
-                              ),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                "😡",
-                                style: TextStyle(
-                                  fontSize: 28,
-                                ),
-                              ),
-                            ),
+                          MyWidget(
+                            index: 0,
+                            imageUrl: "😡",
+                            selectedIndex: selectedIndex,
+                            onClick: (index) {
+                              setState(
+                                () {
+                                  selectedIndex = index;
+                                },
+                              );
+                            },
                           ),
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              color: desibleColor,
-                              borderRadius: BorderRadius.circular(
-                                30,
-                              ),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                "😔",
-                                style: TextStyle(
-                                  fontSize: 28,
-                                ),
-                              ),
-                            ),
+                          MyWidget(
+                            index: 1,
+                            imageUrl: "😔",
+                            selectedIndex: selectedIndex,
+                            onClick: (index) {
+                              setState(
+                                () {
+                                  selectedIndex = index;
+                                },
+                              );
+                            },
                           ),
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              color: activeColor,
-                              borderRadius: BorderRadius.circular(
-                                30,
-                              ),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                "😁",
-                                style: TextStyle(
-                                  fontSize: 28,
-                                ),
-                              ),
-                            ),
+                          MyWidget(
+                            index: 2,
+                            imageUrl: "😁",
+                            selectedIndex: selectedIndex,
+                            onClick: (index) {
+                              setState(
+                                () {
+                                  selectedIndex = index;
+                                },
+                              );
+                            },
                           ),
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              color: desibleColor,
-                              borderRadius: BorderRadius.circular(
-                                30,
-                              ),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                "😍",
-                                style: TextStyle(
-                                  fontSize: 28,
-                                ),
-                              ),
-                            ),
+                          MyWidget(
+                            index: 3,
+                            imageUrl: "😍",
+                            selectedIndex: selectedIndex,
+                            onClick: (index) {
+                              setState(
+                                () {
+                                  selectedIndex = index;
+                                },
+                              );
+                            },
                           ),
                         ],
                       ),

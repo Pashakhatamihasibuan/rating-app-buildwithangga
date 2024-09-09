@@ -1,8 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rating/widget/stars_widget.dart';
 
-class Rantingv2 extends StatelessWidget {
+class Rantingv2 extends StatefulWidget {
   const Rantingv2({super.key});
+
+  @override
+  State<Rantingv2> createState() => _Rantingv2State();
+}
+
+class _Rantingv2State extends State<Rantingv2> {
+  List<int> selectedIndex = []; // Daftar untuk menyimpan bintang yang terpilih
+
+  void _handleStarClick(int index) {
+    setState(() {
+      if (selectedIndex.contains(index)) {
+        // Jika bintang sudah terpilih, hapus bintang dari index ke kanan
+        selectedIndex = selectedIndex.where((i) => i <= index).toList();
+      } else {
+        // Jika bintang belum terpilih, tambahkan bintang dari index ke kiri
+        selectedIndex = List.generate(index + 1, (i) => i);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,47 +66,16 @@ class Rantingv2 extends StatelessWidget {
                 height: 50,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    "assets/icons/star1.png",
-                    width: 50,
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Image.asset(
-                    "assets/icons/star1.png",
-                    width: 50,
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Image.asset(
-                    "assets/icons/star1.png",
-                    width: 50,
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Image.asset(
-                    "assets/icons/star2.png",
-                    width: 50,
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Image.asset(
-                    "assets/icons/star2.png",
-                    width: 50,
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  const SizedBox(
-                    height: 36,
-                  ),
-                ],
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: List.generate(5, (index) {
+                  return StarsWidget(
+                    index: index,
+                    imagesUrl: "assets/icons/star2.png",
+                    selectedIndex: selectedIndex,
+                    onclick:
+                        _handleStarClick, // Menggunakan callback yang benar
+                  );
+                }),
               ),
               const SizedBox(
                 height: 36,

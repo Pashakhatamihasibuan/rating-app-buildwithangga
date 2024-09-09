@@ -1,16 +1,17 @@
-# rating
+# Rating Screen
 
-A new Flutter project.
+Project Design Builwithangga
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## 📸 Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<img width="322" alt="Design - Rating V1" src="https://github.com/Pashakhatamihasibuan/rating-app-buildwithangga/blob/main/ui_design/Rating%20V1.png">
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img width="322" alt="Design - Rating V2" src="https://github.com/Pashakhatamihasibuan/rating-app-buildwithangga/blob/main/ui_design/Rating%20V2.png">
+
+## 🔗 Links
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pashakhatamihsb/)
